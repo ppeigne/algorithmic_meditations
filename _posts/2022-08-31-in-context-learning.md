@@ -97,7 +97,7 @@ Marie Curie was”*
 
 In such a setting, the distribution shifts very quickly from one subject (Albert Einstein, Mahatma Gandhi, Marie Curie) to another in a way that is very unlikely (but not impossible) to appear in the training data.
 
-More formally, we could say that P(“Mahatma” | “Albert Einstein was German”) is very low given the model’s training distribution.
+More formally, we could say that P(“Mahatma” \| “Albert Einstein was German”) is very low given the model’s training distribution.
 
 
 ||Training|In-prompt|
