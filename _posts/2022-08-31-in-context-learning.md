@@ -10,7 +10,7 @@ title: "What is 'in-context learning'?"
 This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).  
 I am grateful to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!
 
-![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png)
+![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png | width=100)
 
 # Key takeaways
 - In-context learning is an emergent behavior of Large Language Models. 
@@ -103,7 +103,7 @@ More formally, we could say that P(“Mahatma” | “Albert Einstein was German
 ||Training|In-prompt|
 |-|-|-|
 |**Unusual distribution: Xie et al. (2022)**|The model is trained to predict the next token of a document, based on **a fixed vocabulary**. <br><br> *“Marie Salomea Skłodowska–Curie; born Maria Salomea Skłodowska, 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize…”*|The model is asked to complete (i.e. predict the next token) a prompt having a **very unusual distribution of entities** (i.e. a task different from the original training task) from the same known vocabulary. <br><br> *“Albert Einstein was German<br> Mahatma Gandhi was Indian <br> Marie Curie was”*|
-|**Same distribution: Chan et al. (2022)**|The model is trained on image-labels pairs to predict the label of the last image. <br> ![](images/Screenshot%20from%202022-08-31%2014-21-15.png)|The model is prompted with a sequence of totally new image-label pairs to predict the label of the last image. <br> ![](images/Screenshot%20from%202022-08-31%2014-29-49.png)|
+|**Same distribution: Chan et al. (2022)**|The model is trained on image-labels pairs to predict the label of the last image. <br> ![]({{ site.baseurl }}/images/Screenshot%20from%202022-08-31%2014-21-15.png)|The model is prompted with a sequence of totally new image-label pairs to predict the label of the last image. <br> ![]({{ site.baseurl }}/images/Screenshot%20from%202022-08-31%2014-29-49.png)|
 
 
 ## Bi-dimensional classification of in-context learning 
@@ -113,4 +113,4 @@ This bi-dimensional classification also highlights possible experimental setups 
 ||New Entities|Known Entities|
 |-|-|-|
 |**Unusual distribution**|**Not explored yet**<br>Training:<br> *“Marie Salomea Skłodowska–Curie; born Maria Salomea Skłodowska, 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize…”* <br>Prompt:<br> *“Albert Einstein was German<br> [new_token1] [new_token2] was [new_token3] <br> Marie Curie was”*|Xie et al. (2022) <br>**Classic in-prompt instructions**<br>Training:<br> *“Marie Salomea Skłodowska–Curie; born Maria Salomea Skłodowska, 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize…”* <br>Prompt:<br> *“Albert Einstein was German<br> Mahatma Gandhi was Indian <br> Marie Curie was”*|
-|**Same distribution**|Chan et al. (2022)<br> Training:<br> ![](images/Screenshot%20from%202022-08-31%2014-21-15.png)<br> Prompt:<br> ![](images/Screenshot%20from%202022-08-31%2014-29-49.png)|No novelty|
+|**Same distribution**|Chan et al. (2022)<br> Training:<br> ![]({{ site.baseurl }}/images/Screenshot%20from%202022-08-31%2014-21-15.png)<br> Prompt:<br> ![]({{ site.baseurl }}/images/Screenshot%20from%202022-08-31%2014-29-49.png)|No novelty|
