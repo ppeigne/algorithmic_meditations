@@ -30,7 +30,7 @@ Discovered with GPT2, in-context learning is a key emergent property of Large La
 For instance, **the model’s prediction of what follows [hog] will dramatically increase toward [wart] if it is prompted with an extract of the Harry Potter novel** (assuming the prompted text contains a mention of the Hogwart school of wizardry), **even though the model was trained on a textual corpus that never mentioned the Harry Potter universe** (e.g. Shakespeare poems). 
 
 <p align="center" width="100%">
-<img src='images/Screenshot from 2022-08-31 14-34-51.png'>
+<img src='{{ site.baseurl }}/images/Screenshot from 2022-08-31 14-34-51.png'>
 <p>
 
 
@@ -76,7 +76,7 @@ The model is trained to map images to labels (hand-written letters with a corres
 ||Training|In-prompt|
 |-|-|-|
 |**Known data: Xie et al. (2022)**|The model is trained to predict the next token of a document, based on **a fixed vocabulary**. <br><br> *“Marie Salomea Skłodowska–Curie; born Maria Salomea Skłodowska, 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize…”*|The model is asked to complete (i.e. predict the next token) a prompt having a very unusual distribution of entities (i.e. a task different from the original training task) from **the same known vocabulary.** <br><br> *“Albert Einstein was German<br> Mahatma Gandhi was Indian <br> Marie Curie was”*|
-|**New data: Chan et al. (2022)**|The model is trained on image-labels pairs to predict the label of the last image. <br> ![](images/Screenshot%20from%202022-08-31%2014-21-15.png)|The model is prompted with a sequence of **totally new image-label pairs** to predict the label of the last image. <br> ![](images/Screenshot%20from%202022-08-31%2014-29-49.png)|
+|**New data: Chan et al. (2022)**|The model is trained on image-labels pairs to predict the label of the last image. <br> ![]({{ site.baseurl }}/images//Screenshot%20from%202022-08-31%2014-21-15.png)|The model is prompted with a sequence of **totally new image-label pairs** to predict the label of the last image. <br> ![]({{ site.baseurl }}/images//Screenshot%20from%202022-08-31%2014-29-49.png)|
 
 
 ### New task / 'Distribution-based' in-context learning (Xie et al. 2022)
