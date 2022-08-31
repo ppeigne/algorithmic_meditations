@@ -4,6 +4,8 @@ layout: post
 description: "An exploration of the concept of in-context learning"
 categories: [markdown, in-context-learning]
 title: "What is 'in-context learning'?"
+comments: true
+image: /images/conversation.png
 ---
 
 # Acknowledgements
