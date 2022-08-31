@@ -10,9 +10,7 @@ title: "What is 'in-context learning'?"
 This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).  
 I am grateful to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!
 
-<p align="center" width="100%">
-<img src='{{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png' width=150>
-<p>
+![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png)
 
 # Key takeaways
 - In-context learning is an emergent behavior of Large Language Models. 
@@ -29,9 +27,7 @@ Discovered with GPT2, in-context learning is a key emergent property of Large La
 
 For instance, **the model’s prediction of what follows [hog] will dramatically increase toward [wart] if it is prompted with an extract of the Harry Potter novel** (assuming the prompted text contains a mention of the Hogwart school of wizardry), **even though the model was trained on a textual corpus that never mentioned the Harry Potter universe** (e.g. Shakespeare poems). 
 
-<p align="center" width="100%">
-<img src='{{ site.baseurl }}/images/Screenshot from 2022-08-31 14-34-51.png'>
-<p>
+![]({{ site.baseurl }}/images/Screenshot from 2022-08-31 14-34-51.png)
 
 
 This phenomenon is therefore called “in-context learning” because the information from context (i.e. the previous part of the prompt) can be used by the model to improve its prediction. **The longer the context the better the prediction.**
