@@ -11,7 +11,7 @@ This work is part of the result of my [CHERI Summer Research Project](https://ef
 I am grateful to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!
 
 <p align="center" width="100%">
-<img src=images/Copy%20of%20CHERI_LogoV1.png width=150>
+<img src='{{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png' width=150>
 <p>
 
 # Key takeaways
