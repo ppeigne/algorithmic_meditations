@@ -58,7 +58,7 @@ Imagine an experiment where some english characters are systematically replaced 
 After the replacement, the modified text is used as a prompt for the model trained on the Shakespear corpus. The model is expected to output text in the style of Shakespeare **but** with the same English-Korean mapping it got as an input.
 
 | Training data | Context data |
-|-|-|
+|:-:|:-:|
 |![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)<br>*"To be or not to be..."*|![]({{ site.baseurl }}/images/korean_shakespeare.png)[^1]<br>*"To be ㅗr ㄴㅗt to be..."*<br>**New entities**|
 
 
@@ -70,7 +70,7 @@ The example of Harry Potter is an example of a new distribution of tokens. The e
 For instance, the token [wart] already exists in the Shakespeare vocabulary but is not used after [hog]. Based on the training data distribution, the probability P([wart] | …[hog]) is close to zero.
 
 | Training data | Context data |
-|-|-|
+|:-:|:-:|
 |![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)<br>*"To be or not to be..."*|![](https://cdn-icons-png.flaticon.com/128/1600/1600953.png)<br>*“Don't let the muggles get you down.”*<br>**New distribution**|
 
 
@@ -81,7 +81,7 @@ This bi-dimensional classification also highlights possible experimental setups 
 
 
 | | New entities | Same entities |
-|-|-|-|
+|-|:-:|:-:|
 |**New distribution** |![](https://cdn-icons-png.flaticon.com/128/5789/5789238.png)<br>*"잠의 들판으로"*[^2]|![](https://cdn-icons-png.flaticon.com/128/1600/1600953.png)<br>*“Don't let the muggles get you down.”*|
 |**Same distribution**|![]({{ site.baseurl }}images/korean_shakespeare.png)<br>*"To be ㅗr ㄴㅗt to be..."*|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)<br>*"To be or not to be..."*|
 
@@ -89,5 +89,5 @@ This bi-dimensional classification also highlights possible experimental setups 
 
 
 ## Footnotes
-[^1] This is Shakespeare with a korean hat, not [Guy Fawkes](https://en.wikipedia.org/wiki/Guy_Fawkes).
-[^2] Korean poem, ["Toward the Field of the Sleep"](https://www.poetrytranslation.org/poems/towards-the-field-of-sleep)
+[^1]: This is Shakespeare with a korean hat, not [Guy Fawkes](https://en.wikipedia.org/wiki/Guy_Fawkes).  
+[^2]: Korean poem, ["Toward the Field of the Sleep"](https://www.poetrytranslation.org/poems/towards-the-field-of-sleep)
