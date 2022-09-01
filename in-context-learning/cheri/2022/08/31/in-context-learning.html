@@ -151,10 +151,10 @@ window.onload = wrap_img;
 <p>The gist of this approach is that asking the model to adapt to <strong>completely new entities</strong> (i.e. new tokens) implies that <strong>it cannot rely on what it has learned before</strong> to perform the task. This task can then be considered “new” for the model.</p>
 
 <h4 id="example-the-incomplete-but-consistent-english-korean-mapping">Example: the incomplete (but consistent) English-Korean mapping</h4>
-<p>Imagine an experiment where some english characters are systematically replaced by the closest sounding Korean characters:<br />
-<code class="language-plaintext highlighter-rouge">[n] -&gt; [ㄴ], [k] -&gt; [ㅋ], [o] -&gt; [ㅗ]</code>.</p>
+<p>Imagine an experiment where some english characters are systematically replaced by the closest sounding Korean characters: <code class="language-plaintext highlighter-rouge">[n] -&gt; [ㄴ]</code>, <code class="language-plaintext highlighter-rouge">[k] -&gt; [ㅋ]</code>, <code class="language-plaintext highlighter-rouge">[o] -&gt; [ㅗ]</code>, etc.</p>
 <ul>
   <li>The replacement is consistent: each english character is always replaced by the same korean character.</li>
+  <li>The replacement is incomplete: not every english character are replaced.</li>
 </ul>
 
 <p>After the replacement, the modified text is used as a prompt for the model trained on the Shakespear corpus. The model is expected to output text in the style of Shakespeare <strong>but</strong> with the same English-Korean mapping it got as an input.</p>
