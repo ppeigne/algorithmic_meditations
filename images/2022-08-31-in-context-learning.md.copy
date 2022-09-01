@@ -10,17 +10,16 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An exploration of the concept of in-context learning" />
 <meta property="og:description" content="An exploration of the concept of in-context learning" />
-<link rel="canonical" href="https://ppeigne.github.io/algorithmic_meditations/markdown/in-context-learning/2022/08/31/in-context-learning.md.copy" />
-<meta property="og:url" content="https://ppeigne.github.io/algorithmic_meditations/markdown/in-context-learning/2022/08/31/in-context-learning.md.copy" />
+<link rel="canonical" href="https://ppeigne.github.io/algorithmic_meditations/images/2022-08-31-in-context-learning.md.copy" />
+<meta property="og:url" content="https://ppeigne.github.io/algorithmic_meditations/images/2022-08-31-in-context-learning.md.copy" />
 <meta property="og:site_name" content="Algorithmic Meditations" />
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-08-31T00:00:00-05:00" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg" />
 <meta property="twitter:title" content="What is ‘in-context learning’?" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-31T00:00:00-05:00","datePublished":"2022-08-31T00:00:00-05:00","description":"An exploration of the concept of in-context learning","headline":"What is ‘in-context learning’?","image":"https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://ppeigne.github.io/algorithmic_meditations/markdown/in-context-learning/2022/08/31/in-context-learning.md.copy"},"url":"https://ppeigne.github.io/algorithmic_meditations/markdown/in-context-learning/2022/08/31/in-context-learning.md.copy"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"An exploration of the concept of in-context learning","headline":"What is ‘in-context learning’?","image":"https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg","url":"https://ppeigne.github.io/algorithmic_meditations/images/2022-08-31-in-context-learning.md.copy"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/algorithmic_meditations/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ppeigne.github.io/algorithmic_meditations/feed.xml" title="Algorithmic Meditations" /><link rel="shortcut icon" type="image/x-icon" href="/algorithmic_meditations/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -67,7 +66,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/algorithmic_meditations/about/">About Me</a><a class="page-link" href="/algorithmic_meditations/search/">Search</a><a class="page-link" href="/algorithmic_meditations/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/algorithmic_meditations/images/2022-08-31-in-context-learning.md.copy">What is &#39;in-context learning&#39;?</a><a class="page-link" href="/algorithmic_meditations/about/">About Me</a><a class="page-link" href="/algorithmic_meditations/search/">Search</a><a class="page-link" href="/algorithmic_meditations/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -75,8 +74,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">What is &#39;in-context learning&#39;?</h1><p class="page-description">An exploration of the concept of in-context learning</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-31T00:00:00-05:00" itemprop="datePublished">
-        Aug 31, 2022
+    <h1 class="post-title p-name" itemprop="name headline">What is &#39;in-context learning&#39;?</h1><p class="page-description">An exploration of the concept of in-context learning</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="" itemprop="datePublished">
+        
       </time>
        • <span class="read-time" title="Estimated read time">
     
@@ -88,10 +87,10 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/algorithmic_meditations/categories/#markdown">markdown</a>
+        <a class="category-tags-link" href="/algorithmic_meditations/categories/#in-context-learning">in-context-learning</a>
         &nbsp;
       
-        <a class="category-tags-link" href="/algorithmic_meditations/categories/#in-context-learning">in-context-learning</a>
+        <a class="category-tags-link" href="/algorithmic_meditations/categories/#CHERI">CHERI</a>
         
       
       </p>
@@ -100,18 +99,16 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul id="toc" class="section-nav">
-</ul>![The discussion, Guilio Rosati]![](/algorithmic_meditations/images/conversation.png)
-
-![](/algorithmic_meditations/images/Copy%20of%20CHERI_LogoV1.png){: style="float: left"} ***Acknowledgements:***<br>*This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).<br>Many thanks to my mentor [Asa Cooper Stickland](https://homepages.inf.ed.ac.uk/s1302760/) for his advices on this project,<br>and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!*
-
+    ![](/algorithmic_meditations/images/Copy%20of%20CHERI_LogoV1.png){: style="float: left"} ***Acknowledgements:***<br>*This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).<br>Many thanks to my mentor [Asa Cooper Stickland](https://homepages.inf.ed.ac.uk/s1302760/) for his advices on this project,<br>and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!*
 
 # Key takeaways
-- In-context learning is an emergent behavior of Large Language Models. 
-- The explanations of such emergent properties are still debated among the community
-- In-context learning is interpreted differently and these distinct interpretations lead to concurrent claims
+- In-context learning can be defined as the property that, **given a prompt of text**, **later tokens are easier to predict than earlier ones**.
+- This property requieres the **presence of novelty in the run-time environment** to be observed.
+- The novelty can be introduced in the run-time environment using orthogonal strategies:
+  - from the introduction of **new entities**.
+  - from the introduction of a **new distribution of the known entities**.
 
-
+![The discussion, Guilio Rosati](/algorithmic_meditations/images/conversation.png)
 
 # Definition
 ### Terminology alert!
@@ -189,7 +186,7 @@ On the other hand, the in-prompt task will produce a completely different distri
 *“Albert Einstein was German  
 Mahatma Gandhi was Indian  
 Marie Curie was”*  
--&gt; *“Polish”.*
+-> *“Polish”.*
 
 In such a setting, the distribution shifts very quickly from one subject (Albert Einstein, Mahatma Gandhi, Marie Curie) to another in a way that is very unlikely (but not impossible) to appear in the training data.
 
@@ -218,7 +215,7 @@ This bi-dimensional classification also highlights possible experimental setups 
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/algorithmic_meditations/markdown/in-context-learning/2022/08/31/in-context-learning.md.copy" hidden></a>
+</script><a class="u-url" href="/algorithmic_meditations/images/2022-08-31-in-context-learning.md.copy" hidden></a>
 </article>
 
       </div>
