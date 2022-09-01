@@ -67,7 +67,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/algorithmic_meditations/images/2022-08-31-in-context-learning.md.copy">What is &#39;in-context learning&#39;?</a><a class="page-link" href="/algorithmic_meditations/about/">About Me</a><a class="page-link" href="/algorithmic_meditations/search/">Search</a><a class="page-link" href="/algorithmic_meditations/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/algorithmic_meditations/about/">About Me</a><a class="page-link" href="/algorithmic_meditations/search/">Search</a><a class="page-link" href="/algorithmic_meditations/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -148,6 +148,25 @@ window.onload = wrap_img;
 <h2 id="narrow-definitions">Narrow definitions</h2>
 
 <h3 id="new-entities--knowledge-based-in-context-learning-chan-et-al-2022">New entities / ‘Knowledge-based’ in-context learning (Chan et al. 2022)</h3>
+<p>The gist of this approach is that asking the model to adapt to <strong>completely new entities</strong> (i.e. new tokens) implies that <strong>it cannot rely on what it has learned before</strong> to perform the task. This task can then be considered “new” for the model.</p>
+
+<h4 id="example-the-incomplete-but-consistent-english-korean-mapping">Example: the incomplete (but consistent) English-Korean mapping</h4>
+<p>Imagine an experiment where some english characters are systematically replaced by the closest sounding Korean characters:<br />
+<code class="language-plaintext highlighter-rouge">[n] -&gt; [ㄴ], [k] -&gt; [ㅋ], [o] -&gt; [ㅗ]</code>.</p>
+<ul>
+  <li>The replacement is consistent: each english character is always replaced by the same korean character.</li>
+</ul>
+
+<p>After the replacement, the modified text is used as a prompt for the model trained on the Shakespear corpus. The model is expected to output text in the style of Shakespeare <strong>but</strong> with the same English-Korean mapping it got as an input.</p>
+
+<div align="center">
+
+| Training data | Context data |
+|-|-|
+|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![](/algorithmic_meditationsimages/korean_shakespeare.png)|
+
+</div>
+
 <p><strong>Is in-context learning based on the same entities as the training phase?</strong></p>
 
 <ul>
@@ -160,8 +179,6 @@ For instance, the token [wart] already exists in the Shakespeare vocabulary but 
 For instance, the model trained on Shakespeare’s poems gets fed in Korean characters sequences to complete.</p>
   </li>
 </ul>
-
-<p>The gist of this approach is that asking the model to adapt to completely new tokens (i.e. new entities) from its training data distribution implies that it cannot rely on what it has learned before to perform the task. This task can then be considered “new” for the model.</p>
 
 <p>Example from Chan et al. (2022):
 The model is trained to map images to labels (hand-written letters with a corresponding numerical label). Then the model is asked to predict the label of images unseen during the training (but given in the context).</p>
@@ -190,6 +207,24 @@ The model is trained to map images to labels (hand-written letters with a corres
 
 <h3 id="new-distribution--distribution-based-in-context-learning-xie-et-al-2022">New distribution / ‘Distribution-based’ in-context learning (Xie et al. 2022)</h3>
 <p><strong>Is the in-context learning based on the same data distribution (task) as the pre-training phase?</strong></p>
+
+<div align="center">
+
+| Training data | Context data |
+|-|-|
+|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![](https://cdn-icons-png.flaticon.com/128/2353/2353710.png)|
+
+
+</div>
+
+<div align="center">
+
+| | New entities | Same entities |
+|-|-|-|
+|**New distribution** ||![](https://cdn-icons-png.flaticon.com/128/2353/2353710.png)|
+|**Same distribution**|![](/algorithmic_meditationsimages/korean_shakespeare.png)|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)|
+
+</div>
 
 <ul>
   <li>
