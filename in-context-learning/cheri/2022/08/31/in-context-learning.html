@@ -159,15 +159,6 @@ window.onload = wrap_img;
 
 <p>After the replacement, the modified text is used as a prompt for the model trained on the Shakespear corpus. The model is expected to output text in the style of Shakespeare <strong>but</strong> with the same English-Korean mapping it got as an input.</p>
 
-<div align="center">
-
-| Training data | Context data |
-|-|-|
-|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) | aaaa|
-|![](/algorithmic_meditations/images/korean_shakespeare.png)|bbbb|
-
-</div>
-
 <table>
   <thead>
     <tr>
@@ -178,11 +169,7 @@ window.onload = wrap_img;
   <tbody>
     <tr>
       <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /></td>
-      <td>aaaa</td>
-    </tr>
-    <tr>
       <td><img src="/algorithmic_meditations/images/korean_shakespeare.png" alt="" /></td>
-      <td>bbbb</td>
     </tr>
   </tbody>
 </table>
@@ -228,23 +215,42 @@ The model is trained to map images to labels (hand-written letters with a corres
 <h3 id="new-distribution--distribution-based-in-context-learning-xie-et-al-2022">New distribution / ‘Distribution-based’ in-context learning (Xie et al. 2022)</h3>
 <p><strong>Is the in-context learning based on the same data distribution (task) as the pre-training phase?</strong></p>
 
-<div align="center">
+<table>
+  <thead>
+    <tr>
+      <th>Training data</th>
+      <th>Context data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /></td>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/2353/2353710.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
 
-| Training data | Context data |
-|-|-|
-|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![](https://cdn-icons-png.flaticon.com/128/2353/2353710.png)|
-
-
-</div>
-
-<div align="center">
-
-| | New entities | Same entities |
-|-|-|-|
-|**New distribution** ||![](https://cdn-icons-png.flaticon.com/128/2353/2353710.png)|
-|**Same distribution**|![](/algorithmic_meditationsimages/korean_shakespeare.png)|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)|
-
-</div>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>New entities</th>
+      <th>Same entities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>New distribution</strong></td>
+      <td> </td>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/2353/2353710.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><strong>Same distribution</strong></td>
+      <td><img src="/algorithmic_meditationsimages/korean_shakespeare.png" alt="" /></td>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
 
 <ul>
   <li>
