@@ -13,6 +13,9 @@ image: https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg
 |![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png)|***Acknowledgements:***<br>*This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).<br><br>Many thanks to my mentor [Asa Cooper Stickland](https://homepages.inf.ed.ac.uk/s1302760/) for his advices on this project,<br>and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!*|
 
 
+![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png){: style="float: left"} ***Acknowledgements:***<br>*This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).<br><br>Many thanks to my mentor [Asa Cooper Stickland](https://homepages.inf.ed.ac.uk/s1302760/) for his advices on this project,<br>and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!*
+
+
 # Key takeaways
 - In-context learning is an emergent behavior of Large Language Models. 
 - The explanations of such emergent properties are still debated among the community
