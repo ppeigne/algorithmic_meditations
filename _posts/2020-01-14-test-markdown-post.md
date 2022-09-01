@@ -4,7 +4,6 @@ layout: post
 description: A minimal example of using markdown with fastpages.
 categories: [markdown]
 title: An Example Markdown Post
-image: /images/J.L._Gerome_The_Wailing_Wall.jpg
 ---
 # Example Markdown Post
 
