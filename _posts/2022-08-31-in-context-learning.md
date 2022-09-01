@@ -5,7 +5,7 @@ description: "An exploration of the concept of in-context learning"
 categories: [markdown, in-context-learning]
 title: "What is 'in-context learning'?"
 comments: true
-image: /images/J.L._Gerome_The_Wailing_Wall.png
+image: /images/conversation.png
 ---
 
 **Acknowledgements**
