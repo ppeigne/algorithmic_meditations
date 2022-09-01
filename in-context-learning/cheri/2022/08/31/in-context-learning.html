@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      5 min read
     
 </span></p>
 
@@ -118,8 +118,9 @@ window.onload = wrap_img;
 
 <h1 id="definition">Definition</h1>
 
-<h3 id="tokens">Tokens</h3>
-<h3 id="context">Context</h3>
+<h3 id="terminology-alert">Terminology alert!</h3>
+<p>The building blocks of natural language processing are not words, but <strong>tokens</strong>. A token is a <strong>sequence of characters from which words are composed</strong>. <strong>The set of all tokens is the vocabulary</strong> of the model. The training of the model will produce a specific vocabulary based on the type of text it is trained with.<br />
+<em>For example, the word “emergence” could be divided into <code class="language-plaintext highlighter-rouge">[em][er][ge][nce]</code> (or any other combination of characters that is most useful to the model).</em></p>
 
 <h2 id="broad-definition">Broad definition</h2>
 <p>Discovered with GPT2, in-context learning is a key emergent property of Large Language Models. In-context learning can be defined as the property that, <strong>given a prompt of text</strong>, <strong>later tokens are easier to predict than earlier ones</strong>.</p>
@@ -160,14 +161,14 @@ window.onload = wrap_img;
 <table>
   <thead>
     <tr>
-      <th>Training data</th>
-      <th>Context data</th>
+      <th style="text-align: center">Training data</th>
+      <th style="text-align: center">Context data</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
-      <td><img src="/algorithmic_meditations/images/korean_shakespeare.png" alt="" />[^1]<br /><em>“To be ㅗr ㄴㅗt to be…“</em><br /><strong>New entities</strong></td>
+      <td style="text-align: center"><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
+      <td style="text-align: center"><img src="/algorithmic_meditations/images/korean_shakespeare.png" alt="" /><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup><br /><em>“To be ㅗr ㄴㅗt to be…“</em><br /><strong>New entities</strong></td>
     </tr>
   </tbody>
 </table>
@@ -182,190 +183,41 @@ For instance, the token [wart] already exists in the Shakespeare vocabulary but 
 <table>
   <thead>
     <tr>
-      <th>Training data</th>
-      <th>Context data</th>
+      <th style="text-align: center">Training data</th>
+      <th style="text-align: center">Context data</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/1600/1600953.png" alt="" /><br /><em>“Don’t let the muggles get you down.”</em><br /><strong>New distribution</strong></td>
+      <td style="text-align: center"><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
+      <td style="text-align: center"><img src="https://cdn-icons-png.flaticon.com/128/1600/1600953.png" alt="" /><br /><em>“Don’t let the muggles get you down.”</em><br /><strong>New distribution</strong></td>
     </tr>
   </tbody>
 </table>
+
+<h2 id="mapping-novelty">Mapping novelty</h2>
+<p>We can connect those orthogonal dimensions to evaluate claims about in-context learning.</p>
+
+<p>This bi-dimensional classification also highlights possible experimental setups combining novelty of the distribution (task) and of the entities, which have not been investigated yet.</p>
 
 <table>
   <thead>
     <tr>
       <th> </th>
-      <th>New entities</th>
-      <th>Same entities</th>
+      <th style="text-align: center">New entities</th>
+      <th style="text-align: center">Same entities</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>New distribution</strong></td>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/5789/5789238.png" alt="" /><br /><em>“잠의 들판으로”</em>[^2]</td>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/1600/1600953.png" alt="" /><br /><em>“Don’t let the muggles get you down.”</em></td>
+      <td style="text-align: center"><img src="https://cdn-icons-png.flaticon.com/128/5789/5789238.png" alt="" /><br /><em>“잠의 들판으로”</em><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></td>
+      <td style="text-align: center"><img src="https://cdn-icons-png.flaticon.com/128/1600/1600953.png" alt="" /><br /><em>“Don’t let the muggles get you down.”</em></td>
     </tr>
     <tr>
       <td><strong>Same distribution</strong></td>
-      <td><img src="/algorithmic_meditationsimages/korean_shakespeare.png" alt="" /><br /><em>“To be ㅗr ㄴㅗt to be…”</em></td>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Is the in-context learning based on the same data distribution (task) as the pre-training phase?</strong></p>
-
-<p><strong>Is in-context learning based on the same entities as the training phase?</strong></p>
-
-<ul>
-  <li>
-    <p>Known: Yes. The distribution of entities among the data can change but none of them are completely new to the model. 
-For instance, the token [wart] already exists in the Shakespeare vocabulary but is not used after [hog]: based on the training data distribution, the probability P([wart] | …[hog]) is close to zero.</p>
-  </li>
-  <li>
-    <p>New:  No. The entities are completely new to the model.
-For instance, the model trained on Shakespeare’s poems gets fed in Korean characters sequences to complete.</p>
-  </li>
-</ul>
-
-<p>Example from Chan et al. (2022):
-The model is trained to map images to labels (hand-written letters with a corresponding numerical label). Then the model is asked to predict the label of images unseen during the training (but given in the context).</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Training</th>
-      <th>In-prompt</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Known data: Xie et al. (2022)</strong></td>
-      <td>The model is trained to predict the next token of a document, based on <strong>a fixed vocabulary</strong>. <br /><br /> <em>“Marie Salomea Skłodowska–Curie; born Maria Salomea Skłodowska, 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize…”</em></td>
-      <td>The model is asked to complete (i.e. predict the next token) a prompt having a very unusual distribution of entities (i.e. a task different from the original training task) from <strong>the same known vocabulary.</strong> <br /><br /> <em>“Albert Einstein was German<br /> Mahatma Gandhi was Indian <br /> Marie Curie was”</em></td>
-    </tr>
-    <tr>
-      <td><strong>New data: Chan et al. (2022)</strong></td>
-      <td>The model is trained on image-labels pairs to predict the label of the last image. <br /> <img src="/algorithmic_meditations/images//Screenshot%20from%202022-08-31%2014-21-15.png" alt="" /></td>
-      <td>The model is prompted with a sequence of <strong>totally new image-label pairs</strong> to predict the label of the last image. <br /> <img src="/algorithmic_meditations/images//Screenshot%20from%202022-08-31%2014-29-49.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="new-distribution--distribution-based-in-context-learning-xie-et-al-2022">New distribution / ‘Distribution-based’ in-context learning (Xie et al. 2022)</h3>
-<p><strong>Is the in-context learning based on the same data distribution (task) as the pre-training phase?</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Training data</th>
-      <th>Context data</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /></td>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/2353/2353710.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>New entities</th>
-      <th>Same entities</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>New distribution</strong></td>
-      <td> </td>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/2353/2353710.png" alt="" /></td>
-    </tr>
-    <tr>
-      <td><strong>Same distribution</strong></td>
-      <td><img src="/algorithmic_meditationsimages/korean_shakespeare.png" alt="" /></td>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<ul>
-  <li>
-    <p>Same: Yes. The distribution of data is the same, hence the task is the same.
-For instance, the model gets fed in with the beginning of an unknown (i.e. not present in the training data) Shakespeare’s poem to complete. The distribution of tokens is supposed to be very similar to what the model was trained with.</p>
-  </li>
-  <li>
-    <p>Unusual: No. The task is somewhat different from the pre-training task because the distribution of tokens is different.
-For example, the model trained on Shakespeare gets fed in with an extract of a Harry Potter novel to complete. If the distribution of tokens is different from the training data, then the task has changed.</p>
-  </li>
-</ul>
-
-<p>The gist of this approach is that asking the model to adapt to a specific distribution of tokens different enough from its training data distribution implies that it cannot rely on what it has learned before to perform the task. This task can then be considered as “new” for the model.</p>
-
-<p>Example from Xie et al. (2022): 
-Training a model on data from Wikipedia will lead the model to learn a distribution of tokens that are linked together following specific statistics. A Wikipedia article is usually focused mainly on one subject, says Marie Curie, over an entire document composed of dozens, or even hundreds of sentences.</p>
-
-<p>On the other hand, the in-prompt task will produce a completely different distribution to follow.<br />
-<em>“Albert Einstein was German<br />
-Mahatma Gandhi was Indian<br />
-Marie Curie was”</em><br />
--&gt; <em>“Polish”.</em></p>
-
-<p>In such a setting, the distribution shifts very quickly from one subject (Albert Einstein, Mahatma Gandhi, Marie Curie) to another in a way that is very unlikely (but not impossible) to appear in the training data.</p>
-
-<p>More formally, we could say that P(“Mahatma” | “Albert Einstein was German”) is very low given the model’s training distribution.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Training</th>
-      <th>In-prompt</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Unusual distribution: Xie et al. (2022)</strong></td>
-      <td>The model is trained to predict the next token of a document, based on <strong>a fixed vocabulary</strong>. <br /><br /> <em>“Marie Salomea Skłodowska–Curie; born Maria Salomea Skłodowska, 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize…”</em></td>
-      <td>The model is asked to complete (i.e. predict the next token) a prompt having a <strong>very unusual distribution of entities</strong> (i.e. a task different from the original training task) from the same known vocabulary. <br /><br /> <em>“Albert Einstein was German<br /> Mahatma Gandhi was Indian <br /> Marie Curie was”</em></td>
-    </tr>
-    <tr>
-      <td><strong>Same distribution: Chan et al. (2022)</strong></td>
-      <td>The model is trained on image-labels pairs to predict the label of the last image. <br /> <img src="/algorithmic_meditations/images/Screenshot%20from%202022-08-31%2014-21-15.png" alt="" /></td>
-      <td>The model is prompted with a sequence of totally new image-label pairs to predict the label of the last image. <br /> <img src="/algorithmic_meditations/images/Screenshot%20from%202022-08-31%2014-29-49.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="mapping-novelty">Mapping novelty</h3>
-<p>We can connect those orthogonal dimensions to evaluate claims about in-context learning. 
-This bi-dimensional classification also highlights possible experimental setups combining novelty of the distribution (task) and of the entities, which have not been investigated yet.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>New Entities</th>
-      <th>Known Entities</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Unusual distribution</strong></td>
-      <td><strong>Not explored yet</strong><br />Training:<br /> <em>“Marie Salomea Skłodowska–Curie; born Maria Salomea Skłodowska, 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize…”</em> <br />Prompt:<br /> <em>“Albert Einstein was German<br /> [new_token1] [new_token2] was [new_token3] <br /> Marie Curie was”</em></td>
-      <td>Xie et al. (2022) <br /><strong>Classic in-prompt instructions</strong><br />Training:<br /> <em>“Marie Salomea Skłodowska–Curie; born Maria Salomea Skłodowska, 7 November 1867 – 4 July 1934) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize…”</em> <br />Prompt:<br /> <em>“Albert Einstein was German<br /> Mahatma Gandhi was Indian <br /> Marie Curie was”</em></td>
-    </tr>
-    <tr>
-      <td><strong>Same distribution</strong></td>
-      <td>Chan et al. (2022)<br /> Training:<br /> <img src="/algorithmic_meditations/images/Screenshot%20from%202022-08-31%2014-21-15.png" alt="" /><br /> Prompt:<br /> <img src="/algorithmic_meditations/images/Screenshot%20from%202022-08-31%2014-29-49.png" alt="" /></td>
-      <td>No novelty</td>
+      <td style="text-align: center"><img src="/algorithmic_meditationsimages/korean_shakespeare.png" alt="" /><br /><em>“To be ㅗr ㄴㅗt to be…”</em></td>
+      <td style="text-align: center"><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
     </tr>
   </tbody>
 </table>
@@ -373,36 +225,16 @@ This bi-dimensional classification also highlights possible experimental setups 
 <h2 id="references">References</h2>
 
 <h2 id="footnotes">Footnotes</h2>
-<p>[^1] This is Shakespeare with a korean hat, not <a href="https://en.wikipedia.org/wiki/Guy_Fawkes">Guy Fawkes</a>.
-[^2] Korean poem, <a href="https://www.poetrytranslation.org/poems/towards-the-field-of-sleep">“Toward the Field of the Sleep”</a></p>
-
-<h1 id="definition-1">Definition</h1>
-<h3 id="terminology-alert">Terminology alert!</h3>
-<p>The building blocks of natural language processing are not words, but <strong>tokens</strong>. A token is a <strong>sequence of characters from which words are composed</strong>. <strong>The set of all tokens is the vocabulary</strong> of the model. The training of the model will produce a specific vocabulary based on the type of text it is trained with.<br />
-<em>For example, the word “emergence” could be divided into [em][er][ge][nce] (or any other combination of characters that is most useful to the model).</em></p>
-
-<h2 id="a-simple-definition">A simple definition</h2>
-
-<h2 id="concurent-explanations">Concurent explanations</h2>
-<p>Until being properly explained, emergent behaviors point by definition to weaknesses in the theoretical framework. Surprising events are surprising only to the extent that they are not clearly understood.</p>
-
-<p>The emergence of in-prompt learning is still not well understood and subject to concurrent hypotheses.</p>
-
-<p>For instance (not being comprehensive):</p>
-<ul>
-  <li>
-    <p>Xie et al. (2022) claim that Transformers are the only architecture able to display in-context learning, while Chan et al. (2022) experiment on a synthetic dataset pretends to make in-prompt learning feasible for both Transformers and LSTMs. Both papers also mentioned datasets’ specific properties to make in-prompt learning happen.</p>
-  </li>
-  <li>
-    <p>Anthropic’s team in its Transformer Circuit thread proposed an approach based on a mechanistic interpretation of transformers models which led to the discovery of ‘induction heads’. According to the theoretical framework, they are developing, these elements are supposed to be core components leading to in-context learning abilities.</p>
-  </li>
-  <li>
-    <p>Another approach suggests that the transformers’ impressive abilities (including in-context learning) could come from saturation of their parameters during their training.</p>
-  </li>
-</ul>
-
-<h2 id="narrower-definitions-of-in-context-learning">Narrower definitions of in-context learning</h2>
-
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>This is Shakespeare with a korean hat, not <a href="https://en.wikipedia.org/wiki/Guy_Fawkes">Guy Fawkes</a>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Korean poem, <a href="https://www.poetrytranslation.org/poems/towards-the-field-of-sleep">“Toward the Field of the Sleep”</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
