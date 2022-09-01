@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -145,9 +145,7 @@ window.onload = wrap_img;
   <li><strong>Novelty of the tokens distribution</strong>: the model is given an unusual task based on an unusual distribution of tokens.</li>
 </ul>
 
-<h2 id="narrow-definitions">Narrow definitions</h2>
-
-<h3 id="new-entities--knowledge-based-in-context-learning-chan-et-al-2022">New entities / ‘Knowledge-based’ in-context learning (Chan et al. 2022)</h3>
+<h2 id="new-entities-based-in-context-learning-chan-et-al-2022">‘New entities based’ in-context learning (Chan et al. 2022)</h2>
 <p>The gist of this approach is that asking the model to adapt to <strong>completely new entities</strong> (i.e. new tokens) implies that <strong>it cannot rely on what it has learned before</strong> to perform the task. This task can then be considered “new” for the model.</p>
 
 <h4 id="example-the-incomplete-but-consistent-english-korean-mapping">Example: the incomplete (but consistent) English-Korean mapping</h4>
@@ -168,11 +166,57 @@ window.onload = wrap_img;
   </thead>
   <tbody>
     <tr>
-      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /></td>
-      <td><img src="/algorithmic_meditations/images/korean_shakespeare.png" alt="" /></td>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
+      <td><img src="/algorithmic_meditations/images/korean_shakespeare.png" alt="" />[^1]<br /><em>“To be ㅗr ㄴㅗt to be…“</em><br /><strong>New entities</strong></td>
     </tr>
   </tbody>
 </table>
+
+<h2 id="new-distribution-based-in-context-learning-xie-et-al-2022">‘New Distribution-based’ in-context learning (Xie et al. 2022)</h2>
+
+<p>The gist of this approach is that asking the model to adapt to a <strong>specific distribution of tokens different enough</strong> from its training data distribution that it <strong>cannot rely on what it has learned before</strong> to perform the task. This task can then be considered as “new” for the model.</p>
+
+<p>The example of Harry Potter is an example of a new distribution of tokens. The entities are the same, but their distribution is different.<br />
+For instance, the token [wart] already exists in the Shakespeare vocabulary but is not used after [hog]. Based on the training data distribution, the probability P([wart] | …[hog]) is close to zero.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Training data</th>
+      <th>Context data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/1600/1600953.png" alt="" /><br /><em>“Don’t let the muggles get you down.”</em><br /><strong>New distribution</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>New entities</th>
+      <th>Same entities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>New distribution</strong></td>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/5789/5789238.png" alt="" /><br /><em>“잠의 들판으로”</em>[^2]</td>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/1600/1600953.png" alt="" /><br /><em>“Don’t let the muggles get you down.”</em></td>
+    </tr>
+    <tr>
+      <td><strong>Same distribution</strong></td>
+      <td><img src="/algorithmic_meditationsimages/korean_shakespeare.png" alt="" /><br /><em>“To be ㅗr ㄴㅗt to be…”</em></td>
+      <td><img src="https://cdn-icons-png.flaticon.com/128/2723/2723896.png" alt="" /><br /><em>“To be or not to be…”</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Is the in-context learning based on the same data distribution (task) as the pre-training phase?</strong></p>
 
 <p><strong>Is in-context learning based on the same entities as the training phase?</strong></p>
 
@@ -327,6 +371,10 @@ This bi-dimensional classification also highlights possible experimental setups 
 </table>
 
 <h2 id="references">References</h2>
+
+<h2 id="footnotes">Footnotes</h2>
+<p>[^1] This is Shakespeare with a korean hat, not <a href="https://en.wikipedia.org/wiki/Guy_Fawkes">Guy Fawkes</a>.
+[^2] Korean poem, <a href="https://www.poetrytranslation.org/poems/towards-the-field-of-sleep">“Toward the Field of the Sleep”</a></p>
 
 <h1 id="definition-1">Definition</h1>
 <h3 id="terminology-alert">Terminology alert!</h3>
