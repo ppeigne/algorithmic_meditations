@@ -62,7 +62,7 @@ After the replacement, the modified text is used as a prompt for the model train
 
 | Training data | Context data |
 |-|-|
-|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![]({{ site.baseurl }}images/korean_shakespeare.png)|
+|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![]({{ site.baseurl }}/images/korean_shakespeare.png)|
 
 </div>
 
