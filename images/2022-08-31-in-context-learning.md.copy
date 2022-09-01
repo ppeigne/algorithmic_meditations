@@ -1,23 +1,22 @@
 ---
-toc: true
-layout: post
-description: "An exploration of the concept of in-context learning"
-categories: [markdown, in-context-learning]
 title: "What is 'in-context learning'?"
+description: "An exploration of the concept of in-context learning"
+categories: [in-context-learning, CHERI]
+toc: false
+layout: post
 comments: true
 image: https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg
 ---
-![The discussion, Guilio Rosati]![]({{ site.baseurl }}/images/conversation.png)
-
 ![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png){: style="float: left"} ***Acknowledgements:***<br>*This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).<br>Many thanks to my mentor [Asa Cooper Stickland](https://homepages.inf.ed.ac.uk/s1302760/) for his advices on this project,<br>and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!*
 
-
 # Key takeaways
-- In-context learning is an emergent behavior of Large Language Models. 
-- The explanations of such emergent properties are still debated among the community
-- In-context learning is interpreted differently and these distinct interpretations lead to concurrent claims
+- In-context learning can be defined as the property that, **given a prompt of text**, **later tokens are easier to predict than earlier ones**.
+- This property requieres the **presence of novelty in the run-time environment** to be observed.
+- The novelty can be introduced in the run-time environment using orthogonal strategies:
+  - from the introduction of **new entities**.
+  - from the introduction of a **new distribution of the known entities**.
 
-
+![The discussion, Guilio Rosati]({{ site.baseurl }}/images/conversation.png)
 
 # Definition
 ### Terminology alert!
