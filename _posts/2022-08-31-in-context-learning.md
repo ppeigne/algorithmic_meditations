@@ -67,6 +67,10 @@ After the replacement, the modified text is used as a prompt for the model train
 
 </div>
 
+| Training data | Context data |
+|-|-|
+|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) | aaaa|
+|![]({{ site.baseurl }}/images/korean_shakespeare.png)|bbbb|
 
 
 **Is in-context learning based on the same entities as the training phase?**
