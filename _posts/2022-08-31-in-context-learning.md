@@ -8,10 +8,9 @@ comments: true
 image: https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg
 ---
 **Acknowledgements**  
-This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).  
-I am grateful to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!
+|![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png) | This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).  
+Many thanks to my mentor [Asa Cooper Stickland](https://homepages.inf.ed.ac.uk/s1302760/) for his advices on this project and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!|
 
-![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png)
 
 # Key takeaways
 - In-context learning is an emergent behavior of Large Language Models. 
