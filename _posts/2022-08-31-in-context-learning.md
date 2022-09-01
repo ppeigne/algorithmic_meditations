@@ -52,9 +52,9 @@ Orthogonal interpretations rely on a different approach to how to bring novelty 
 The gist of this approach is that asking the model to adapt to **completely new entities** (i.e. new tokens) implies that **it cannot rely on what it has learned before** to perform the task. This task can then be considered “new” for the model.
 
 #### Example: the incomplete (but consistent) English-Korean mapping
-Imagine an experiment where some english characters are systematically replaced by the closest sounding Korean characters:  
-`[n] -> [ㄴ], [k] -> [ㅋ], [o] -> [ㅗ]`. 
+Imagine an experiment where some english characters are systematically replaced by the closest sounding Korean characters: `[n] -> [ㄴ]`, `[k] -> [ㅋ]`, `[o] -> [ㅗ]`, etc. 
 - The replacement is consistent: each english character is always replaced by the same korean character.
+- The replacement is incomplete: not every english character are replaced.
 
 After the replacement, the modified text is used as a prompt for the model trained on the Shakespear corpus. The model is expected to output text in the style of Shakespeare **but** with the same English-Korean mapping it got as an input.
 
@@ -65,6 +65,7 @@ After the replacement, the modified text is used as a prompt for the model train
 |![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![]({{ site.baseurl }}/images/korean_shakespeare.png)|
 
 </div>
+
 
 
 **Is in-context learning based on the same entities as the training phase?**
