@@ -58,19 +58,9 @@ Imagine an experiment where some english characters are systematically replaced 
 
 After the replacement, the modified text is used as a prompt for the model trained on the Shakespear corpus. The model is expected to output text in the style of Shakespeare **but** with the same English-Korean mapping it got as an input.
 
-<div align="center">
-
 | Training data | Context data |
 |-|-|
-|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) | aaaa|
-|![]({{ site.baseurl }}/images/korean_shakespeare.png)|bbbb|
-
-</div>
-
-| Training data | Context data |
-|-|-|
-|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) | aaaa|
-|![]({{ site.baseurl }}/images/korean_shakespeare.png)|bbbb|
+|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)|![]({{ site.baseurl }}/images/korean_shakespeare.png)|
 
 
 **Is in-context learning based on the same entities as the training phase?**
@@ -96,23 +86,15 @@ The model is trained to map images to labels (hand-written letters with a corres
 **Is the in-context learning based on the same data distribution (task) as the pre-training phase?**
 
 
-<div align="center">
-
 | Training data | Context data |
 |-|-|
 |![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![](https://cdn-icons-png.flaticon.com/128/2353/2353710.png)|
 
 
-</div>
-
-<div align="center">
-
 | | New entities | Same entities |
 |-|-|-|
 |**New distribution** ||![](https://cdn-icons-png.flaticon.com/128/2353/2353710.png)|
 |**Same distribution**|![]({{ site.baseurl }}images/korean_shakespeare.png)|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)|
-
-</div>
 
 
 
