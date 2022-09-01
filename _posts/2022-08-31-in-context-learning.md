@@ -5,14 +5,14 @@ description: "An exploration of the concept of in-context learning"
 categories: [markdown, in-context-learning]
 title: "What is 'in-context learning'?"
 comments: true
-image: /images/conversation.png
+image: /images/J.L._Gerome_The_Wailing_Wall.png
 ---
 
-# Acknowledgements
+**Acknowledgements**
 This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).  
 I am grateful to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!
 
-![CHERI, 50%]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png)
+![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png)
 
 # Key takeaways
 - In-context learning is an emergent behavior of Large Language Models. 
