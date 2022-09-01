@@ -49,6 +49,24 @@ Orthogonal interpretations rely on a different approach to how to bring novelty 
 ## Narrow definitions
 
 ### New entities / ‘Knowledge-based' in-context learning (Chan et al. 2022)
+The gist of this approach is that asking the model to adapt to **completely new entities** (i.e. new tokens) implies that **it cannot rely on what it has learned before** to perform the task. This task can then be considered “new” for the model.
+
+#### Example: the incomplete (but consistent) English-Korean mapping
+Imagine an experiment where some english characters are systematically replaced by the closest sounding Korean characters:  
+`[n] -> [ㄴ], [k] -> [ㅋ], [o] -> [ㅗ]`. 
+- The replacement is consistent: each english character is always replaced by the same korean character.
+
+After the replacement, the modified text is used as a prompt for the model trained on the Shakespear corpus. The model is expected to output text in the style of Shakespeare **but** with the same English-Korean mapping it got as an input.
+
+<div align="center">
+
+| Training data | Context data |
+|-|-|
+|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![]({{ site.baseurl }}images/korean_shakespeare.png)|
+
+</div>
+
+
 **Is in-context learning based on the same entities as the training phase?**
 
 - Known: Yes. The distribution of entities among the data can change but none of them are completely new to the model. 
@@ -57,7 +75,7 @@ For instance, the token [wart] already exists in the Shakespeare vocabulary but 
 - New:  No. The entities are completely new to the model.
 For instance, the model trained on Shakespeare’s poems gets fed in Korean characters sequences to complete.
 
-The gist of this approach is that asking the model to adapt to completely new tokens (i.e. new entities) from its training data distribution implies that it cannot rely on what it has learned before to perform the task. This task can then be considered “new” for the model. 
+
 
 Example from Chan et al. (2022):
 The model is trained to map images to labels (hand-written letters with a corresponding numerical label). Then the model is asked to predict the label of images unseen during the training (but given in the context). 
@@ -70,6 +88,27 @@ The model is trained to map images to labels (hand-written letters with a corres
 
 ### New distribution / 'Distribution-based' in-context learning (Xie et al. 2022)
 **Is the in-context learning based on the same data distribution (task) as the pre-training phase?**
+
+
+<div align="center">
+
+| Training data | Context data |
+|-|-|
+|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png) |![](https://cdn-icons-png.flaticon.com/128/2353/2353710.png)|
+
+
+</div>
+
+<div align="center">
+
+| | New entities | Same entities |
+|-|-|-|
+|**New distribution** ||![](https://cdn-icons-png.flaticon.com/128/2353/2353710.png)|
+|**Same distribution**|![]({{ site.baseurl }}images/korean_shakespeare.png)|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)|
+
+</div>
+
+
 
 - Same: Yes. The distribution of data is the same, hence the task is the same.
 For instance, the model gets fed in with the beginning of an unknown (i.e. not present in the training data) Shakespeare’s poem to complete. The distribution of tokens is supposed to be very similar to what the model was trained with. 
