@@ -1,5 +1,5 @@
 ---
-title: "What is 'in-context learning'?"
+title: "What is 'in-context learning'? I"
 description: "An exploration of the concept of in-context learning"
 categories: [in-context-learning, CHERI]
 toc: false
@@ -18,13 +18,11 @@ image: https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg
 
 ![The discussion, Guilio Rosati]({{ site.baseurl }}/images/conversation.png)
 
-# Definition
-
-### Terminology alert!
+## Terminology alert!
 The building blocks of natural language processing are not words, but **tokens**. A token is a **sequence of characters from which words are composed**. **The set of all tokens is the vocabulary** of the model. The training of the model will produce a specific vocabulary based on the type of text it is trained with.  
 *For example, the word “emergence” could be divided into `[em][er][ge][nce]` (or any other combination of characters that is most useful to the model).*
 
-## Broad definition
+# Broad definition
 Discovered with GPT2, in-context learning is a key emergent property of Large Language Models. In-context learning can be defined as the property that, **given a prompt of text**, **later tokens are easier to predict than earlier ones**. 
 
 For instance, **the model’s prediction of what follows [hog] will dramatically increase toward [wart] if it is prompted with an extract of the Harry Potter novel** (assuming the prompted text contains a mention of the Hogwart school of wizardry), **even though the model was trained on a textual corpus that never mentioned the Harry Potter universe** (e.g. Shakespeare poems). 
@@ -35,7 +33,7 @@ In other words, our model will learn to write in the style of J.K. Rowling from 
 
 This phenomenon is therefore called “in-context learning” because the information from context (i.e. the previous part of the prompt) can be used by the model to improve its prediction. **The longer the context the better the prediction.**
 
-## Novelty
+# Novelty
 On its most basic level, in-context learning is defined (for a model being given a text prompt as input) as the property of being able to produce a better prediction for the later tokens of the prompt than for the earlier ones. This improvement is a result of the model being able to use the information present in the prompt (also called the context), i.e. "to learn from context".
 
 This ability implies that **the task from the context cannot be performed well only relying on the model’s previous learning**. 
@@ -46,11 +44,22 @@ Orthogonal interpretations rely on a different approach to how to bring novelty 
 - **Novelty of the entities**: the context's entities are unknown to the model (i.e. never been encountered in the pre-training phase).
 - **Novelty of the tokens distribution**: the model is given an unusual task based on an unusual distribution of tokens. 
 
+# 'New Distribution-based' in-context learning
 
-## 'New entities based' in-context learning (Chan et al. 2022)
+The gist of this approach is that asking the model to adapt to a **specific distribution of tokens different enough** from its training data distribution that it **cannot rely on what it has learned before** to perform the task. This task can then be considered as “new” for the model. 
+
+The example of Harry Potter is an instance of a new distribution of tokens. The entities are the same, but their distribution is different.  
+For instance, the token [wart] already exists in the Shakespeare vocabulary but is not used after [hog]. Based on the training data distribution, the probability P([wart] | …[hog]) is close to zero.
+
+| Training data | Context data |
+|:-:|:-:|
+|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)<br>*"To be or not to be..."*|![](https://cdn-icons-png.flaticon.com/128/1600/1600953.png)<br>*“Don't let the muggles get you down.”*<br>**New distribution**|
+
+
+# 'New entities based' in-context learning
 The gist of this approach is that asking the model to adapt to **completely new entities** (i.e. new tokens) implies that **it cannot rely on what it has learned before** to perform the task. This task can then be considered “new” for the model.
 
-#### Example: the incomplete (but consistent) English-Korean mapping
+## Example: the incomplete (but consistent) English-Korean mapping
 Imagine an experiment where some english characters are systematically replaced by the closest sounding Korean characters: `[n] -> [ㄴ]`, `[k] -> [ㅋ]`, `[o] -> [ㅗ]`, etc. 
 - The replacement is consistent: each english character is always replaced by the same korean character.
 - The replacement is incomplete: not every english character are replaced.
@@ -62,19 +71,12 @@ After the replacement, the modified text is used as a prompt for the model train
 |![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)<br>*"To be or not to be..."*|![]({{ site.baseurl }}/images/korean_shakespeare.png)[^1]<br>*"To be ㅗr ㄴㅗt to be..."*<br>**New entities**|
 
 
-## 'New Distribution-based' in-context learning (Xie et al. 2022)
-
-The gist of this approach is that asking the model to adapt to a **specific distribution of tokens different enough** from its training data distribution that it **cannot rely on what it has learned before** to perform the task. This task can then be considered as “new” for the model. 
-
-The example of Harry Potter is an example of a new distribution of tokens. The entities are the same, but their distribution is different.  
-For instance, the token [wart] already exists in the Shakespeare vocabulary but is not used after [hog]. Based on the training data distribution, the probability P([wart] | …[hog]) is close to zero.
-
-| Training data | Context data |
-|:-:|:-:|
-|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)<br>*"To be or not to be..."*|![](https://cdn-icons-png.flaticon.com/128/1600/1600953.png)<br>*“Don't let the muggles get you down.”*<br>**New distribution**|
 
 
-## Mapping novelty
+# Mapping novelty
+Those dimensions of in-context learning are essentially orthogonal. We can imagine a distribution based in-context learning free from new entities but any new entity implies a change in the distribution.
+
+
 We can connect those orthogonal dimensions to evaluate claims about in-context learning. 
 
 This bi-dimensional classification also highlights possible experimental setups combining novelty of the distribution (task) and of the entities, which have not been investigated yet.
@@ -83,7 +85,7 @@ This bi-dimensional classification also highlights possible experimental setups 
 | | New entities | Same entities |
 |-|:-:|:-:|
 |**New distribution** |![](https://cdn-icons-png.flaticon.com/128/5789/5789238.png)<br>*"잠의 들판으로"*[^2]|![](https://cdn-icons-png.flaticon.com/128/1600/1600953.png)<br>*“Don't let the muggles get you down.”*|
-|**Same distribution**|![]({{ site.baseurl }}images/korean_shakespeare.png)<br>*"To be ㅗr ㄴㅗt to be..."*|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)<br>*"To be or not to be..."*|
+|**Same distribution**|![]({{ site.baseurl }}/images/korean_shakespeare.png)<br>*"To be ㅗr ㄴㅗt to be..."*|![](https://cdn-icons-png.flaticon.com/128/2723/2723896.png)<br>*"To be or not to be..."*|
 
 ## References
 
