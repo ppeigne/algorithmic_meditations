@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>What is ‘in-context learning’? I | Algorithmic Meditations</title>
+<title>What is ‘in-context learning’? [In progress] | Algorithmic Meditations</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="What is ‘in-context learning’? I" />
+<meta property="og:title" content="What is ‘in-context learning’? [In progress]" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An exploration of the concept of in-context learning" />
 <meta property="og:description" content="An exploration of the concept of in-context learning" />
@@ -18,9 +18,9 @@
 <meta property="article:published_time" content="2022-08-31T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg" />
-<meta property="twitter:title" content="What is ‘in-context learning’? I" />
+<meta property="twitter:title" content="What is ‘in-context learning’? [In progress]" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-31T00:00:00-05:00","datePublished":"2022-08-31T00:00:00-05:00","description":"An exploration of the concept of in-context learning","headline":"What is ‘in-context learning’? I","image":"https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://ppeigne.github.io/algorithmic_meditations/in-context-learning/cheri/2022/08/31/in-context-learning.html"},"url":"https://ppeigne.github.io/algorithmic_meditations/in-context-learning/cheri/2022/08/31/in-context-learning.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-31T00:00:00-05:00","datePublished":"2022-08-31T00:00:00-05:00","description":"An exploration of the concept of in-context learning","headline":"What is ‘in-context learning’? [In progress]","image":"https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://ppeigne.github.io/algorithmic_meditations/in-context-learning/cheri/2022/08/31/in-context-learning.html"},"url":"https://ppeigne.github.io/algorithmic_meditations/in-context-learning/cheri/2022/08/31/in-context-learning.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/algorithmic_meditations/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ppeigne.github.io/algorithmic_meditations/feed.xml" title="Algorithmic Meditations" /><link rel="shortcut icon" type="image/x-icon" href="/algorithmic_meditations/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -75,7 +75,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">What is &#39;in-context learning&#39;? I</h1><p class="page-description">An exploration of the concept of in-context learning</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-31T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">What is &#39;in-context learning&#39;? [In progress]</h1><p class="page-description">An exploration of the concept of in-context learning</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-31T00:00:00-05:00" itemprop="datePublished">
         Aug 31, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -100,7 +100,10 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img src="/algorithmic_meditations/images/Copy%20of%20CHERI_LogoV1.png" alt="" style="float: left" /> <strong><em>Acknowledgements:</em></strong><br /><em>This work is part of the result of my <a href="https://effectivealtruism.ch/2022-summer-research-program">CHERI Summer Research Project</a>.<br />Many thanks to my mentor <a href="https://homepages.inf.ed.ac.uk/s1302760/">Asa Cooper Stickland</a> for his advices on this project,<br />and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!</em></p>
+    <h1 id="disclaimer">Disclaimer</h1>
+<p><strong>This is an in progress and incomplete work. I recently started to consider a better a way to frame in-context learning which seems more robust and precise than what is presented here.</strong></p>
+
+<p><img src="/algorithmic_meditations/images/Copy%20of%20CHERI_LogoV1.png" alt="" style="float: left" /> <strong><em>Acknowledgements:</em></strong><br /><em>This work is part of the result of my <a href="https://effectivealtruism.ch/2022-summer-research-program">CHERI Summer Research Project</a>.<br />Many thanks to my mentor <a href="https://homepages.inf.ed.ac.uk/s1302760/">Asa Cooper Stickland</a> for his advices on this project,<br />and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!</em></p>
 
 <h1 id="key-takeaways">Key takeaways</h1>
 <ul>
