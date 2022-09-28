@@ -1,12 +1,16 @@
 ---
-title: "What is 'in-context learning'? I"
+title: "What is 'in-context learning'? [In progress]"
 description: "An exploration of the concept of in-context learning"
 categories: [in-context-learning, CHERI]
 toc: false
 layout: post
 comments: true
 image: https://upload.wikimedia.org/wikipedia/commons/c/cd/Giulio_Rosati_10.jpg
+hidden: true
 ---
+# Disclaimer
+**This is an in progress and incomplete work. I recently started to consider a better a way to frame in-context learning which seems more robust and precise than what is presented here.**
+
 ![]({{ site.baseurl }}/images/Copy%20of%20CHERI_LogoV1.png){: style="float: left"} ***Acknowledgements:***<br>*This work is part of the result of my [CHERI Summer Research Project](https://effectivealtruism.ch/2022-summer-research-program).<br>Many thanks to my mentor [Asa Cooper Stickland](https://homepages.inf.ed.ac.uk/s1302760/) for his advices on this project,<br>and to the CHERI for giving me this opportunity to do my first AI Safety research in such a nice environment!*
 
 # Key takeaways
